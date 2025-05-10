@@ -2,23 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Mother’s Day</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Mother's Day</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="banner">
-    <h1>Happy Mother’s Day</h1>
-    <p>To the two women who changed my life.</p>
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="falling-roses"></div>
+
+  <div class="container">
+    <h1>Happy Mother's Day</h1>
+    <p>To two of the most important women in my life,</p>
+    <div class="buttons">
+      <a href="mom1.html" class="heart-button">For My Mom</a>
+      <a href="mom2.html" class="heart-button">For My Aunt</a>
+    </div>
   </div>
 
-  <main class="home-buttons">
-    <a href="mom1.html" class="card">For My Birth Mom 💗</a>
-    <a href="mom2.html" class="card">For My Bonus Mom 💛</a>
-  </main>
-
-  <footer>
-    <p>Made with love — Valentine</p>
-  </footer>
+  <script>
+    // Falling roses animation
+    const roseContainer = document.querySelector('.falling-roses');
+    for (let i = 0; i < 30; i++) {
+      const rose = document.createElement('div');
+      rose.classList.add('rose');
+      rose.style.left = Math.random() * 100 + 'vw';
+      rose.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      roseContainer.appendChild(rose);
+    }
+  </script>
 </body>
 </html>
