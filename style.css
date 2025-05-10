@@ -6,40 +6,84 @@
 }
 
 body {
-  background: #fff8f5;
+  background: #fff5f7;
   color: #4a2f2f;
-  line-height: 1.6;
+  line-height: 1.7;
   padding: 20px;
 }
 
-header {
+.banner {
+  background: linear-gradient(to right, #ffccd5, #ffe4e1);
+  padding: 40px 20px;
   text-align: center;
-  margin-bottom: 40px;
-}
-
-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  color: #d16a7c;
-}
-
-header p {
-  font-size: 1.2em;
-  color: #6b4f4f;
-}
-
-.mom-card {
-  background: #ffeef0;
-  border: 1px solid #f8d7da;
-  padding: 20px;
+  border-radius: 12px;
   margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.banner h1 {
+  font-size: 2.5em;
+  color: #c94f66;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 1.2em;
+  color: #5c3b3b;
+}
+
+.home-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.card {
+  background: #ffeef0;
+  border: 2px solid #f8d7da;
+  padding: 20px 30px;
+  font-size: 1.3em;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #b84d57;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #fff1f3;
+}
+
+.message-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #f3c1c1;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.mom-card h2 {
+.message-page p {
+  font-size: 1.2em;
+  color: #5c3b3b;
+  margin-bottom: 30px;
+}
+
+.back-button {
+  display: inline-block;
+  text-decoration: none;
+  background: #f8d7da;
   color: #b84d57;
-  margin-bottom: 15px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.back-button:hover {
+  background: #ffcdd2;
 }
 
 footer {
