@@ -1,78 +1,67 @@
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Great Vibes', cursive;
-  background: linear-gradient(to right, #ffe6f0, #fff0f5);
+  font-family: 'Georgia', serif;
+  background: white;
+  color: #333;
+}
+
+h1, h2 {
   text-align: center;
-  overflow-x: hidden;
+  color: goldenrod;
 }
 
-.container {
-  padding: 50px 20px;
+.banner {
+  padding: 2em;
+  background: linear-gradient(to right, white, #f9f9f9);
+  text-align: center;
+  font-size: 1.8em;
 }
 
-h1 {
-  font-size: 3em;
-  color: #d63384;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 1.5em;
-  color: #555;
-}
-
-.buttons {
-  margin-top: 30px;
-}
-
-.heart-button {
-  background-color: #ff69b4;
-  color: white;
-  padding: 15px 30px;
-  margin: 10px;
-  border: none;
-  border-radius: 30px;
+.card, .letter-card {
+  margin: 2em auto;
+  padding: 2em;
+  max-width: 600px;
+  background: #fff8e7;
+  border: 1px solid #f0dba5;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(218,165,32, 0.3);
   font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 2em;
+}
+
+.gallery-container img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(218,165,32, 0.4);
+}
+
+.music-controls {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: 1.2em;
+  background: goldenrod;
+  color: white;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-  animation: pulse 2s infinite;
 }
 
-.heart-button:hover {
-  transform: scale(1.1);
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-.falling-roses {
+canvas {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.rose {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-image: url('https://i.imgur.com/0XW5QW2.png');
-  background-size: cover;
-  animation-name: fall;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-@keyframes fall {
-  0% { top: -10%; opacity: 1; transform: rotate(0deg); }
-  100% { top: 110%; opacity: 0; transform: rotate(360deg); }
+  z-index: -1;
 }
