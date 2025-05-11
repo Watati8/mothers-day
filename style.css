@@ -1,100 +1,84 @@
-/* Reset & Base Styles */
 body {
   margin: 0;
-  font-family: 'Georgia', serif;
-  background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
-  color: #5e4b4b;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #ffeef5;
+  color: #4b2e2e;
   overflow-x: hidden;
 }
 
-/* Page Container */
-.container {
-  padding: 40px;
+audio {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.main-content {
+  padding: 2rem;
   max-width: 900px;
   margin: auto;
-  background: #ffffffcc;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Header */
-h1 {
-  font-size: 2.5rem;
   text-align: center;
-  color: #d45b8c;
-  margin-bottom: 20px;
 }
 
-/* Letter Styling */
+h1 {
+  color: #d16ba5;
+  font-size: 2.5rem;
+}
+
 .letter {
   font-size: 1.2rem;
-  line-height: 1.7;
-  padding: 10px 0;
+  margin-top: 1.5rem;
+  line-height: 1.8;
+  color: #6b3e58;
 }
 
-/* Gallery Styling */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .gallery img {
-  width: 140px;
-  height: 180px;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border: 4px solid #f7c5d0;
   border-radius: 12px;
-  border: 3px solid #ffc9dd;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
-/* Music Control Button */
-.music-controls {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 999;
+.gallery img:hover {
+  transform: scale(1.05);
 }
 
-.music-controls button {
-  background: #ffc9dd;
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  padding: 10px 16px;
+.signature {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  color: #ff69b4;
   font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: sparkle 2s infinite alternate;
+}
+
+@keyframes sparkle {
+  from { text-shadow: 0 0 5px #fff0f5; }
+  to   { text-shadow: 0 0 15px gold, 0 0 25px pink; }
 }
 
 /* Petals */
-.petals {
+.petal {
   position: fixed;
-  top: 0;
-  left: 0;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(pink, transparent 70%);
+  border-radius: 50%;
   pointer-events: none;
-  z-index: 1;
-}
-.signature {
-  text-align: center;
-  font-family: 'Brush Script MT', cursive;
-  font-size: 2rem;
-  color: #d45b8c;
-  margin-top: 50px;
-  animation: fadeIn 3s ease-in-out, shimmer 2s infinite;
-  position: relative;
-  z-index: 10;
+  opacity: 0.7;
+  animation: fall linear infinite;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes shimmer {
-  0% { text-shadow: 0 0 5px #ffc9dd; }
-  50% { text-shadow: 0 0 15px #ffe4ec, 0 0 30px #ffbfd6; }
-  100% { text-shadow: 0 0 5px #ffc9dd; }
+@keyframes fall {
+  0% { transform: translateY(-10vh) rotate(0deg); }
+  100% { transform: translateY(110vh) rotate(360deg); }
 }
